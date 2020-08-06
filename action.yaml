@@ -11,6 +11,7 @@ inputs:
     required: true
   content:
     description: 'DNS record content, e.g. "127.0.0.1"'
+    required: true
   ttl:
     description: "Time to live for DNS record. Value of 1 is 'automatic'"
     default: 1
@@ -19,16 +20,12 @@ inputs:
     default: true
   token:
     description: "CloudFlare API token"
-    default: ${{ secrets.CLOUDFLARE_TOKEN }}
+    #default: ${{ secrets.CLOUDFLARE_TOKEN }}
     required: true
   zone:
     description: "CloudFlare zone"
-    default: ${{ secrets.CLOUDFLARE_ZONE }}
+    #default: ${{ secrets.CLOUDFLARE_ZONE }}
     required: true
-
-outputs:
-  id:
-  name:
 
 runs:
   using: "node12"
